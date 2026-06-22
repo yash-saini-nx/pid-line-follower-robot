@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤖 LFR-PID-ESP32
+# LFR-PID-ESP32
 
 ### Line Follower Robot with PID Control, Obstacle Avoidance & Real-Time Web Dashboard
 
@@ -21,7 +21,7 @@
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -41,7 +41,7 @@
 
 ---
 
-## 🔍 Overview
+## Overview
 
 This project implements an autonomous **Line Follower Robot (LFR)** capable of:
 
@@ -54,7 +54,7 @@ The development followed a two-stage pipeline: circuit design and validation in 
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Details |
 |---|---|
@@ -68,7 +68,7 @@ The development followed a two-stage pipeline: circuit design and validation in 
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -104,7 +104,7 @@ The development followed a two-stage pipeline: circuit design and validation in 
 
 ---
 
-## 🔧 Hardware
+## Hardware
 
 ### Components List
 
@@ -174,7 +174,7 @@ Battery (7.4V) → Buck Converter (MC34063) → VCC (logic) + VM (motors)
 
 ---
 
-## 📐 PID Control Algorithm
+## PID Control Algorithm
 
 The robot uses a **weighted centroid error** across the 5-sensor array to calculate how far off-centre the line is, then feeds that error into a classical PID loop.
 
@@ -218,7 +218,7 @@ Right motor speed = BASE_SPEED − u(t)
 
 ---
 
-## 🧪 Simulation (Proteus + Arduino Nano)
+## Simulation (Proteus + Arduino Nano)
 
 The complete circuit was first validated in **Proteus 8 Professional** before any physical components were soldered.
 
@@ -235,7 +235,7 @@ The complete circuit was first validated in **Proteus 8 Professional** before an
 
 ---
 
-## 🚀 Final Build (ESP32-S3)
+## Final Build (ESP32-S3)
 
 The validated design was ported to a custom-fabricated PCB with an **ESP32-S3** as the main controller, adding Wi-Fi capability for the live dashboard.
 
@@ -250,7 +250,7 @@ The validated design was ported to a custom-fabricated PCB with an **ESP32-S3** 
 
 ---
 
-## 📊 Web Debug Dashboard
+## Web Debug Dashboard
 
 A single-file HTML dashboard (`lfr_dashboard.html`) connects to the ESP32's WebSocket server and provides real-time telemetry.
 
@@ -304,7 +304,7 @@ A single-file HTML dashboard (`lfr_dashboard.html`) connects to the ESP32's WebS
 
 ---
 
-## 🔄 State Machine
+## State Machine
 
 The firmware implements a 12-state FSM for robust line-following and obstacle avoidance:
 
@@ -341,7 +341,7 @@ ERROR_STOP  (sensor fault / unrecoverable loss)
 
 ---
 
-## 🛠 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -397,7 +397,7 @@ python3 -m http.server 8080
 
 ---
 
-## 📁 File Structure
+## File Structure
 
 ```
 LFR-PID-ESP32/
@@ -420,7 +420,7 @@ LFR-PID-ESP32/
 
 ---
 
-## 📈 Results & Performance
+## Results & Performance
 
 | Metric | Value |
 |---|---|
@@ -435,7 +435,7 @@ The robot was tested on a complex multi-section track (shown above) featuring: s
 
 ---
 
-## 🔮 Future Work
+## Future Work
 
 - [ ] Encoder feedback for closed-loop speed control
 - [ ] OTA (Over-the-Air) firmware updates via Wi-Fi
@@ -446,7 +446,7 @@ The robot was tested on a complex multi-section track (shown above) featuring: s
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source under the [MIT License](LICENSE).
 
