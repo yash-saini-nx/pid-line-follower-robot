@@ -15,7 +15,7 @@
 
 <br/>
 
-![Track Preview](track_2_0.jpeg)
+![Track Preview](media/track_2_0.jpeg)
 
 </div>
 
@@ -139,6 +139,7 @@ The development followed a two-stage pipeline: circuit design and validation in 
 ### Circuit Schematic
 
 The circuit was designed in **Proteus 8 Professional**. Key connections:
+![Schematics](sch/circuit_nano.png)
 
 ```
 Arduino Nano / ESP32-S3
@@ -175,7 +176,7 @@ Battery (7.4V) → Buck Converter (MC34063) → VCC (logic) + VM (motors)
 
 The robot uses a **weighted centroid error** across the 5-sensor array to calculate how far off-centre the line is, then feeds that error into a classical PID loop.
 
-![PID Block Diagram](pid_block.webp)
+![PID Block Diagram](ctrl/pid_block.webp)
 
 ### Error Calculation
 
@@ -209,7 +210,7 @@ Right motor speed = BASE_SPEED − u(t)
 | `BASE_SPEED` | 90 (PWM) | Forward cruise speed |
 | `MAX_SPEED` | 150 (PWM) | Maximum corrected motor speed |
 
-![PID Response Plot](response_plot.png)
+![PID Response Plot](ctrl/response_plot.png)
 
 > The response plot illustrates how different gain values (K=0.5, K=1.1, K=1.6) affect settling behaviour. The selected gains minimise overshoot while achieving fast convergence to the reference.
 
@@ -236,7 +237,7 @@ The complete circuit was first validated in **Proteus 8 Professional** before an
 
 The validated design was ported to a custom-fabricated PCB with an **ESP32-S3** as the main controller, adding Wi-Fi capability for the live dashboard.
 
-![Robot Build](strct.jpeg)
+![Robot Build](media/strct.jpeg)
 
 **Upgrades over simulation:**
 - ATmega328P replaced by **ESP32-S3** (dual-core 240 MHz, built-in Wi-Fi)
@@ -251,7 +252,7 @@ The validated design was ported to a custom-fabricated PCB with an **ESP32-S3** 
 
 A single-file HTML dashboard (`lfr_dashboard.html`) connects to the ESP32's WebSocket server and provides real-time telemetry.
 
-![Dashboard Screenshot](live_data.png)
+![Dashboard Screenshot](gui/live_data.png)
 
 ### Dashboard Panels
 
