@@ -73,32 +73,32 @@ The development followed a two-stage pipeline: circuit design and validation in 
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                        SENSORS                          │
-│  IR×5 (A0–A4)           VL53L1X ToF (I2C: SDA/SCL)    │
+│  IR×5 (A0–A4)           VL53L1X ToF (I2C: SDA/SCL)      │
 └────────────┬───────────────────────┬────────────────────┘
              │                       │
              ▼                       ▼
 ┌─────────────────────────────────────────────────────────┐
 │               ESP32-S3 (Main Controller)                │
 │                                                         │
-│  ┌─────────────┐   ┌───────────────┐  ┌─────────────┐  │
-│  │ IR Weighted │   │  PID Loop     │  │ State Mach. │  │
-│  │ Error Calc  │──▶│  Kp·e + Ki·∫e │  │ FOLLOW_LINE │  │
-│  └─────────────┘   │  + Kd·de/dt   │  │ AVOID_*     │  │
-│                    └──────┬────────┘  │ ERROR_STOP  │  │
-│                           │           └─────────────┘  │
+│  ┌─────────────┐   ┌───────────────┐  ┌─────────────┐   │
+│  │ IR Weighted │   │  PID Loop     │  │ State Mach. │   │
+│  │ Error Calc  │─▶│  Kp·e + Ki·∫e │  │ FOLLOW_LINE │   │
+│  └─────────────┘   │  + Kd·de/dt   │  │ AVOID_*     │   │
+│                    └──────┬────────┘  │ ERROR_STOP  │   │
+│                           │           └─────────────┘   │
 │                           ▼                             │
 │                   ┌───────────────┐                     │
 │                   │  Motor Speed  │                     │
 │                   │  Correction   │                     │
 │                   └───────┬───────┘                     │
 │                           │          ┌────────────────┐ │
-│                  Wi-Fi AP │          │ WebSocket JSON  │ │
-│                  (port 81)│◀────────▶│ Telemetry ~20Hz │ │
+│                  Wi-Fi AP │          │ WebSocket JSON │ │
+│                  (port 81)│◀───────▶│ Telemetry ~20Hz│ │
 └───────────────────────────┼──────────┴────────────────┘ │
                             ▼
              ┌──────────────────────────┐
-             │   TB6612FNG Motor Driver  │
-             │  Left Motor  Right Motor  │
+             │   TB6612FNG Motor Driver │
+             │  Left Motor  Right Motor │
              └──────────────────────────┘
 ```
 
