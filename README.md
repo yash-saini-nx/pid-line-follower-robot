@@ -61,7 +61,6 @@ The development followed a two-stage pipeline: circuit design and validation in 
 | **Buck Converter Power** | MC34063-based step-down from 7.4 V LiPo to regulated logic supply |
 
 ---
----
 
 ## Hardware
 
