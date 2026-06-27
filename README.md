@@ -1,6 +1,6 @@
 <div align="center">
 
-# PID-Line Following Robot
+# PID-Line Follower Robot
 
 ### Line Follower Robot with PID Control, Obstacle Avoidance & Real-Time Web Dashboard
 
