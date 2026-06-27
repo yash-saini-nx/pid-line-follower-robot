@@ -4,11 +4,6 @@
 
 ### Line Follower Robot with PID Control, Obstacle Avoidance & Real-Time Web Dashboard
 
-[![Arduino](https://img.shields.io/badge/Simulation-Arduino%20Nano-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://www.arduino.cc/)
-[![ESP32](https://img.shields.io/badge/Final%20Build-ESP32--S3-E7352C?style=for-the-badge&logo=espressif&logoColor=white)](https://www.espressif.com/)
-[![Proteus](https://img.shields.io/badge/Simulation-Proteus%208-0057A6?style=for-the-badge)](https://www.labcenter.com/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-
 <br/>
 
 > A fully custom-built autonomous Line Follower Robot using a **5-channel IR sensor array** and a **PID control loop**, with real-time telemetry streamed over Wi-Fi to a browser-based debug dashboard. Prototyped in **Proteus 8 with Arduino Nano**, then deployed on a custom PCB with an **ESP32-S3**.
